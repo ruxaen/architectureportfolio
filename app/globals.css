@@ -172,12 +172,12 @@ body {
   content: '';
   position: absolute;
   left: 2%;
-  right: 0%;
+  right: -4%;
   top: 10%;
-  bottom: -14%;
+  bottom: -20%;
   border-radius: 8px;
-  background: radial-gradient(52% 58% at 46% 62%, rgba(20, 18, 15, 0.7) 0%, rgba(20, 18, 15, 0) 72%);
-  filter: blur(40px);
+  background: radial-gradient(52% 58% at 44% 48%, rgba(20, 18, 15, 0.85) 0%, rgba(20, 18, 15, 0) 75%);
+  filter: blur(48px);
   z-index: 0;
   pointer-events: none;
 }
@@ -334,17 +334,17 @@ body {
 
 .closed-book__shadow {
   position: absolute;
-  width: 400px;
-  height: 440px;
+  width: 440px;
+  height: 480px;
   left: 50%;
   top: 50%;
-  transform: translate(-48%, -44%) rotateX(4deg);
+  transform: translate(-45%, -40%) rotateX(4deg);
   background: radial-gradient(
-    ellipse 90% 80% at 52% 55%,
-    rgba(12, 10, 8, 0.65) 0%,
-    rgba(12, 10, 8, 0) 65%
+    ellipse 90% 80% at 45% 45%,
+    rgba(12, 10, 8, 0.75) 0%,
+    rgba(12, 10, 8, 0) 70%
   );
-  filter: blur(40px);
+  filter: blur(45px);
   pointer-events: none;
 }
 
