@@ -1,0 +1,26 @@
+{
+  "name": "portfolio-book",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Premium architectural portfolio presented as an interactive physical book.",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "typecheck": "tsc --noEmit",
+    "preview": "npx --yes serve@14 out -l 4000",
+    "generate:pages": "node scripts/generate-pages.mjs"
+  },
+  "dependencies": {
+    "next": "^16.3.5",
+    "page-flip": "^2.0.7",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "sharp": "^0.35.4",
+    "typescript": "^7.0.2"
+  }
+}
