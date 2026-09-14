@@ -46,6 +46,8 @@ interface PortfolioBookProps {
 export interface PortfolioBookHandle {
   flipNext: () => void;
   flipPrev: () => void;
+  /** Jump instantly (no flip animation) to a page index. */
+  jumpTo: (page: number) => void;
 }
 
 export function PortfolioBook({ onStateChange, apiRef, children }: PortfolioBookProps) {
@@ -54,6 +56,8 @@ export function PortfolioBook({ onStateChange, apiRef, children }: PortfolioBook
   const bookRef = useRef<HTMLDivElement | null>(null); // engine root element
   const engineRef = useRef<PageFlip | null>(null);
   const currentRef = useRef(0);
+  /** Latest `report`, so imperative jumps can refresh UI state too. */
+  const reportRef = useRef<() => void>(() => {});
 
   const [ready, setReady] = useState(false);
   const [orientation, setOrientation] = useState<Orientation>('landscape');
@@ -156,12 +160,17 @@ export function PortfolioBook({ onStateChange, apiRef, children }: PortfolioBook
       setOrientation(nextOrientation);
       book.classList.toggle('book--portrait', nextOrientation === 'portrait');
       const current = engine.getCurrentPageIndex();
+      // The stacked-page fore-edges only make sense when real pages are stacked
+      // behind them: hide them on the closed-cover and final-page states.
+      book.classList.toggle('book--first', current <= 0);
+      book.classList.toggle('book--last', current >= PAGES.length - 1);
       promoteNeighbours(current);
       onStateChange(getBookState(current, nextOrientation));
     };
 
     engine.on('flip', report);
     engine.on('changeOrientation', report);
+    reportRef.current = report;
 
     engine.loadFromHTML(pageEls as unknown as HTMLElement[]);
     engineRef.current = engine;
@@ -204,14 +213,21 @@ export function PortfolioBook({ onStateChange, apiRef, children }: PortfolioBook
 
   const flipNext = useCallback(() => engineRef.current?.flipNext(), []);
   const flipPrev = useCallback(() => engineRef.current?.flipPrev(), []);
+  const jumpTo = useCallback((page: number) => {
+    const engine = engineRef.current;
+    if (!engine) return;
+    const clamped = Math.max(0, Math.min(page, PAGES.length - 1));
+    engine.turnToPage(clamped); // instant, no flip animation
+    reportRef.current(); // `flip` may not fire for silent turns — refresh anyway
+  }, []);
 
   useEffect(() => {
     if (!apiRef) return;
-    apiRef.current = { flipNext, flipPrev };
+    apiRef.current = { flipNext, flipPrev, jumpTo };
     return () => {
       apiRef.current = null;
     };
-  }, [apiRef, flipNext, flipPrev]);
+  }, [apiRef, flipNext, flipPrev, jumpTo]);
 
   /* ------------------------------ keyboard ------------------------------ */
 

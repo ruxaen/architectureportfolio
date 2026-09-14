@@ -35,10 +35,11 @@ export function BookExperience() {
 
   const handleStateChange = useCallback((next: BookState) => setState(next), []);
 
-  const { flipNext, flipPrev } = useMemo(
+  const { flipNext, flipPrev, jumpTo } = useMemo(
     () => ({
       flipNext: () => apiRef.current?.flipNext(),
       flipPrev: () => apiRef.current?.flipPrev(),
+      jumpTo: (page: number) => apiRef.current?.jumpTo(page),
     }),
     [],
   );
@@ -62,7 +63,9 @@ export function BookExperience() {
 
   return (
     <div className={`experience experience--${bookPhase}`}>
-      <SceneUI visible={isOpen} />
+      {/* Scene chrome shows from the very start (like the reference); the nav
+          links only become clickable once the book is open. */}
+      <SceneUI visible onJump={jumpTo} interactive={isOpen} />
 
       <FullscreenButton tone="light" />
 

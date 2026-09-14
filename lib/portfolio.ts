@@ -85,41 +85,44 @@ export const FLIP_DURATION = 720;
 export const PAGES: PortfolioPage[] = [
   { src: '/portfolio/cover.webp', label: 'Portfolio cover', kind: 'cover', layout: 'cover' },
 
-  { src: '/portfolio/page-01.webp', label: 'Contents', layout: 'contents' },
-  { src: '/portfolio/page-02.webp', label: 'Selected work', layout: 'render' },
+  // Real pages — split from the provided spread mockups (scripts/split-spread.mjs).
+  { src: '/portfolio/page-01.webp', label: 'I am Madiha Samar — portrait title' },
+  { src: '/portfolio/page-02.webp', label: 'Introduction — observation, education, experience' },
+  { src: '/portfolio/page-03.webp', label: 'Art of Noticing — collage' },
+  { src: '/portfolio/page-04.webp', label: 'List of Contents' },
 
-  { src: '/portfolio/page-03.webp', label: '01 Business School Design — title', layout: 'title' },
-  { src: '/portfolio/page-04.webp', label: '01 Business School Design — view', layout: 'render' },
-  { src: '/portfolio/page-05.webp', label: '01 Business School Design — drawings', layout: 'drawing' },
-  { src: '/portfolio/page-06.webp', label: '01 Business School Design — detail', layout: 'photo' },
+  { src: '/portfolio/page-05.webp', label: '01 Business School Design — title', layout: 'title' },
+  { src: '/portfolio/page-06.webp', label: '01 Business School Design — view', layout: 'render' },
+  { src: '/portfolio/page-07.webp', label: '01 Business School Design — drawings', layout: 'drawing' },
+  { src: '/portfolio/page-08.webp', label: '01 Business School Design — detail', layout: 'photo' },
 
-  { src: '/portfolio/page-07.webp', label: '02 Riverside Housing — title', layout: 'title' },
-  { src: '/portfolio/page-08.webp', label: '02 Riverside Housing — view', layout: 'render' },
-  { src: '/portfolio/page-09.webp', label: '02 Riverside Housing — drawings', layout: 'drawing' },
-  { src: '/portfolio/page-10.webp', label: '02 Riverside Housing — detail', layout: 'photo' },
+  { src: '/portfolio/page-09.webp', label: '02 Riverside Housing — title', layout: 'title' },
+  { src: '/portfolio/page-10.webp', label: '02 Riverside Housing — view', layout: 'render' },
+  { src: '/portfolio/page-11.webp', label: '02 Riverside Housing — drawings', layout: 'drawing' },
+  { src: '/portfolio/page-12.webp', label: '02 Riverside Housing — detail', layout: 'photo' },
 
-  { src: '/portfolio/page-11.webp', label: '03 Museum of Light — title', layout: 'title' },
-  { src: '/portfolio/page-12.webp', label: '03 Museum of Light — view', layout: 'render' },
-  { src: '/portfolio/page-13.webp', label: '03 Museum of Light — drawings', layout: 'drawing' },
-  { src: '/portfolio/page-14.webp', label: '03 Museum of Light — detail', layout: 'photo' },
+  { src: '/portfolio/page-13.webp', label: '03 Museum of Light — title', layout: 'title' },
+  { src: '/portfolio/page-14.webp', label: '03 Museum of Light — view', layout: 'render' },
+  { src: '/portfolio/page-15.webp', label: '03 Museum of Light — drawings', layout: 'drawing' },
+  { src: '/portfolio/page-16.webp', label: '03 Museum of Light — detail', layout: 'photo' },
 
-  { src: '/portfolio/page-15.webp', label: '04 Urban Market Hall — title', layout: 'title' },
-  { src: '/portfolio/page-16.webp', label: '04 Urban Market Hall — view', layout: 'render' },
-  { src: '/portfolio/page-17.webp', label: '04 Urban Market Hall — drawings', layout: 'drawing' },
-  { src: '/portfolio/page-18.webp', label: '04 Urban Market Hall — detail', layout: 'photo' },
+  { src: '/portfolio/page-17.webp', label: '04 Urban Market Hall — title', layout: 'title' },
+  { src: '/portfolio/page-18.webp', label: '04 Urban Market Hall — view', layout: 'render' },
+  { src: '/portfolio/page-19.webp', label: '04 Urban Market Hall — drawings', layout: 'drawing' },
+  { src: '/portfolio/page-20.webp', label: '04 Urban Market Hall — detail', layout: 'photo' },
 
-  { src: '/portfolio/page-19.webp', label: '05 Hilltop Retreat — title', layout: 'title' },
-  { src: '/portfolio/page-20.webp', label: '05 Hilltop Retreat — view', layout: 'render' },
-  { src: '/portfolio/page-21.webp', label: '05 Hilltop Retreat — drawings', layout: 'drawing' },
-  { src: '/portfolio/page-22.webp', label: '05 Hilltop Retreat — detail', layout: 'photo' },
+  { src: '/portfolio/page-21.webp', label: '05 Hilltop Retreat — title', layout: 'title' },
+  { src: '/portfolio/page-22.webp', label: '05 Hilltop Retreat — view', layout: 'render' },
+  { src: '/portfolio/page-23.webp', label: '05 Hilltop Retreat — drawings', layout: 'drawing' },
+  { src: '/portfolio/page-24.webp', label: '05 Hilltop Retreat — detail', layout: 'photo' },
 
-  { src: '/portfolio/page-23.webp', label: '06 Transit Interchange — title', layout: 'title' },
-  { src: '/portfolio/page-24.webp', label: '06 Transit Interchange — view', layout: 'render' },
-  { src: '/portfolio/page-25.webp', label: '06 Transit Interchange — drawings', layout: 'drawing' },
-  { src: '/portfolio/page-26.webp', label: '06 Transit Interchange — detail', layout: 'photo' },
+  { src: '/portfolio/page-25.webp', label: '06 Transit Interchange — title', layout: 'title' },
+  { src: '/portfolio/page-26.webp', label: '06 Transit Interchange — view', layout: 'render' },
+  { src: '/portfolio/page-27.webp', label: '06 Transit Interchange — drawings', layout: 'drawing' },
+  { src: '/portfolio/page-28.webp', label: '06 Transit Interchange — detail', layout: 'photo' },
 
-  { src: '/portfolio/page-27.webp', label: 'Process — notes', layout: 'text' },
-  { src: '/portfolio/page-28.webp', label: 'Process — studies', layout: 'photo' },
+  { src: '/portfolio/page-29.webp', label: 'Process — notes', layout: 'text' },
+  { src: '/portfolio/page-30.webp', label: 'Process — studies', layout: 'photo' },
 
   { label: 'Blank', kind: 'blank' },
   { src: '/portfolio/cv.webp', label: 'Curriculum vitae', kind: 'cv', layout: 'cv' },
@@ -137,7 +140,7 @@ export const PAGES: PortfolioPage[] = [
 /** Place cv.pdf in /public. */
 export const CV_URL = '/cv.pdf';
 /** Suggested file name when the visitor downloads the CV. */
-export const CV_FILENAME = 'Sambarapu-Naveen-CV.pdf';
+export const CV_FILENAME = 'Madiha-Samar-CV.pdf';
 
 export type ContactIcon = 'mail' | 'linkedin' | 'github' | 'behance' | 'instagram' | 'link';
 
@@ -158,11 +161,32 @@ export const CONTACTS: ContactLink[] = [
 ];
 
 export const SITE = {
-  name: 'Sambarapu Naveen',
-  tagline: 'Architecture / Design / Ideas',
+  name: 'Madiha Samar',
+  tagline: 'Architectural Portfolio',
   label: 'Portfolio',
-  description: 'Selected architectural work, presented as a book you can leaf through.',
+  description: 'A collection of spaces, ideas and possibilities — an architectural portfolio presented as a book.',
 } as const;
+
+/* -------------------------------------------------------------------------- */
+/* Scene chrome (the quiet text around the book)                              */
+/* -------------------------------------------------------------------------- */
+
+/** Stacked list, bottom-left of the scene. Purely environmental. */
+export const SCENE_CHAPTERS = ['Architecture', 'Urbanism', 'People', 'Nature'] as const;
+
+/** Bottom-right hint. */
+export const SCENE_HINT = 'Scroll or use arrows';
+
+/** Top-right section links. `page` jumps straight to that book page. */
+export function indexOfKind(kind: PageKind): number {
+  return PAGES.findIndex((p) => p.kind === kind);
+}
+
+export const SCENE_NAV = [
+  { id: 'portfolio', label: 'Portfolio', page: 0 },
+  { id: 'cv', label: 'CV', page: indexOfKind('cv') },
+  { id: 'contact', label: 'Contact', page: indexOfKind('contact') },
+] as const;
 
 /* -------------------------------------------------------------------------- */
 /* Derived book state                                                         */
@@ -187,6 +211,9 @@ export interface BookState {
 export function pageKind(page: PortfolioPage | undefined): PageKind {
   return page?.kind ?? 'page';
 }
+
+/** Index of the first page with `kind` (or -1). Used by the scene nav links. */
+export { indexOfKind as firstIndexOfKind };
 
 const clampIndex = (index: number) => Math.max(0, Math.min(index, PAGES.length - 1));
 
