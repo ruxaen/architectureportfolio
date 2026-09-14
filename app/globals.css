@@ -208,62 +208,6 @@ body {
     0 26px 55px -14px rgba(0, 0, 0, 0.75);
 }
 
-/* Stacked-page edges — the visible thickness of the paper block. */
-.book::before,
-.book::after {
-  content: '';
-  position: absolute;
-  top: 0.5%;
-  bottom: 0.7%;
-  width: 7px;
-  z-index: 1;
-  pointer-events: none;
-  background: repeating-linear-gradient(90deg, #ded8cb 0 1.2px, #a49c8d 1.2px 2px);
-  border-radius: 0 2px 2px 0;
-  box-shadow:
-    inset 2px 0 3px rgba(0, 0, 0, 0.18),
-    0 2px 10px -2px rgba(0, 0, 0, 0.6);
-}
-
-.book::before {
-  left: -7px;
-  border-radius: 2px 0 0 2px;
-  transform: scaleX(-1);
-}
-
-.book::after {
-  right: -7px;
-}
-
-/* No stacked pages exist behind the fore-edges in these states — hide them.
-   (cover shown alone, last page shown alone, portrait single page) */
-.book--first::before,
-.book--first::after,
-.book--last::before,
-.book--last::after {
-  display: none;
-}
-
-/* Closed book in portrait: hide the fore-edge, hint at the spine instead. */
-.book--portrait::after {
-  display: none;
-}
-
-.book--portrait::before {
-  width: 3px;
-  left: -3px;
-  background: linear-gradient(90deg, #56514a, #cfc9bd);
-  border-radius: 2px 0 0 2px;
-  box-shadow:
-    inset -2px 0 4px -2px rgba(0, 0, 0, 0.6),
-    0 2px 8px -2px rgba(0, 0, 0, 0.55);
-  transform: none;
-}
-
-.book--portrait.book--first::before {
-  display: none; /* nothing is stacked yet — no spine sliver either */
-}
-
 /* Constant gutter shading across the open spread. */
 .book__gutter {
   position: absolute;

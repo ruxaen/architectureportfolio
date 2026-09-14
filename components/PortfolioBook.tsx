@@ -160,10 +160,6 @@ export function PortfolioBook({ onStateChange, apiRef, children }: PortfolioBook
       setOrientation(nextOrientation);
       book.classList.toggle('book--portrait', nextOrientation === 'portrait');
       const current = engine.getCurrentPageIndex();
-      // The stacked-page fore-edges only make sense when real pages are stacked
-      // behind them: hide them on the closed-cover and final-page states.
-      book.classList.toggle('book--first', current <= 0);
-      book.classList.toggle('book--last', current >= PAGES.length - 1);
       promoteNeighbours(current);
       onStateChange(getBookState(current, nextOrientation));
     };
